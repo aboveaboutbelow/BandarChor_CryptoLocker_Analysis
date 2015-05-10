@@ -9,7 +9,9 @@ It first drops itself in the Windows startup folder. Then it generates a random 
 
 > number=31&id=4361716884&pc=FOOBAR&tail=.id-4361716884_europay@india.com
 
-In this variant, it is posted to viber-club.ru/script.php and viber-club.ru/wp-admin/script.php. This web host account has since been closed, and the server returns a 403 (Forbidden). It continues to attempt to contact the server, apparently expecting to receive a 32-byte encryption key (possibly AES-256) before it can proceed. It will make no modifications to the computer until it receives a 200 (OK) response.
+Email addresses found in other variants include fud@lycos.com and fudx@lycox.com.
+
+This query string is posted to viber-club.ru/script.php and viber-club.ru/wp-admin/script.php. The website is down and the server returns a 403 (Forbidden). It continues to attempt to contact the server, apparently expecting to receive a 32-byte encryption key (possibly AES-256) before it can proceed. It will make no modifications to the computer until it receives a 200 (OK) response.
 
 Even after spoofing the response or bypassing the check, the malware remains inactive, and it ends no a WaitMessage call. If its hidden window is made visible, we see the ransom image and fields resembling those in the unlock.exe tool and the program enters an unresponsive message loop.
 
@@ -25,9 +27,7 @@ With the key buffer empty, the effective key is 32 zero bytes:
 
 Filling the key buffer in unlock.exe with the same value successfully decrypts files thus encrypted.
 
-When all files are locked, the wallpaper is set to the ransom image (fud.bmp).
-
-The malware then deletes itself.
+When all files are locked, the wallpaper is set to the ransom image (fud.bmp). The malware then deletes itself.
 
 
 
