@@ -19,8 +19,9 @@ It then finds all files with any of several dozen common extensions that reside 
 
 It encrypts the first 30,0000 of each file, and stores the number of encrypted bytes in the first 4 bytes, apparently storing those first 4 bytes at the end of the file.
 
-With the key buffer empty, the effective key is 32 zero bytes; i.e.:
-> 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0
+With the key buffer empty, the effective key is 32 zero bytes:
+
+> 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
 Filling the key buffer in unlock.exe with the same value successfully decrypts files thus encrypted.
 
