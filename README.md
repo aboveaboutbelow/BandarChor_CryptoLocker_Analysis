@@ -43,3 +43,16 @@ File Recovery
 -------------
 
 [BandarChor](https://www.f-secure.com/weblog/archives/00002795.html) seems to encrypt only the first 30,000 bytes of files so some data recovery is possible without the key. See: https://github.com/tamamshud/BandarChorFileRestorer
+
+
+Unlock program
+--------------
+
+unlock.exe is the decryption tool for the BandarChor cryptolocker malware. It is sent to victims after payment of the ransom along with a key/password.
+
+Though no malicious behaviour was noticed, it should be considered unsafe to run outside an offline sandboxed environment (e.g. Sandboxie). Additionally, there is no key validation and the locked files are overwritten.
+
+If paying the ransom and running this tool, be sure to run it in a sandbox to ensure the originals are not overwritten because mis-entering the key would doubly encrypt the files and make recovery very hard.
+
+
+In the ID field, enter the full extension: e.g. ".id-1029384756_fudx@lycos.com". The password/key field permits any number of characters, but only the first 32 seem to be used. Set the directory to the drive root (e.g. C:\) to decrypt all files.
