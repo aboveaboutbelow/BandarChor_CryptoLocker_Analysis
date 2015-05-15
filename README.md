@@ -9,21 +9,19 @@ It first drops itself in the Windows startup folder. Then it generates a random 
 
 > number=31&id=4361716884&pc=FOOBAR&tail=.id-4361716884_europay@india.com
 
-Email addresses found in other variants include fud@lycos.com and fudx@lycox.com.
+Email addresses found in other variants include fud@lycos.com and fudx@lycos.com.
 
 This query string is posted to viber-club.ru/script.php and viber-club.ru/wp-admin/script.php. The website is down and the server returns a 403 (Forbidden). It continues to attempt to contact the server, apparently expecting to receive a 32-byte encryption key (possibly AES-256) before it can proceed. It will make no modifications to the computer until it receives a 200 (OK) response.
 
-Even after spoofing the response or bypassing the check, the malware remains inactive, and it ends no a WaitMessage call. If its hidden window is made visible, we see the ransom image and fields resembling those in the unlock.exe tool and the program enters an unresponsive message loop.
+Even after spoofing the response or bypassing the check, the malware remains inactive, and it ends on a WaitMessage call. If its hidden window is made visible, we see the ransom image and fields resembling those in the unlock.exe tool and the program enters an unresponsive message loop.
 
 There is a further check of the content of a buffer populated from the HTTP response body. If this is empty, it remains dormant. If the check is bypassed, the cryptolocker is activated.
 
 It then finds all files with any of several dozen common extensions that reside in user directories, excluding Program Files, Windows, etc.
 
-It encrypts the first 30,0000 of each file, and stores the number of encrypted bytes in the first 4 bytes, apparently storing those first 4 bytes at the end of the file.
+It encrypts up to 30,000 bytes of the header of each file, and stores the number of encrypted bytes in the first 4 bytes (appending the overwritten bytes to the end of the file).
 
-With the key buffer empty, the effective key is 32 zero bytes:
-
-> 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+With the key buffer empty, the effective key is 32 zero bytes.
 
 Filling the key buffer in unlock.exe with the same value successfully decrypts files thus encrypted.
 
