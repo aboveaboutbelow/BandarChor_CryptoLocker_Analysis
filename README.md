@@ -17,7 +17,9 @@ Even after spoofing the response or bypassing the check, the malware remains ina
 
 There is a further check of the content of a buffer populated from the HTTP response body. If this is empty, it remains dormant. If the check is bypassed, the cryptolocker is activated.
 
-It then finds all files with any of several dozen common extensions that reside in user directories, excluding Program Files, Windows, etc.
+It then searches user directories (i.e. not Windows, Program Files, etc.) for files with these extensions:
+
+.113, .1cd, .3gp, .73b, .a3d, .abf, .abk, .accdb, .arj, .as4, .asm, .asvx, .ate, .avi, .bac, .bak, .bck, .bkf, .cdr, .cer, .cpt, .csv, .db3, .dbf, .doc, .docx, .dwg, .erf, .fbf, .fbk, .fbw, .fbx, .fdb, .gbk, .gho, .gzip, .iv2i, .jpeg, .jpg, .key, .keystore, .ldf, .m2v, .m3d, .max, .mdb, .mkv, .mov, .mpeg, .nbd, .nrw, .nx1, .odb, .odc, .odp, .ods, .odt, .old, .orf, .p12, .pdf, .pef, .ppsx, .ppt, .pptm, .pptx, .pst, .ptx, .pwm, .pz3, .qic, .r3d, .rar, .raw, .rtf, .rwl, .rx2, .sbs, .sldasm, .sldprt, .sn1, .sna, .spf, .sr2, .srf, .srw, .tbl, .tib, .tis, .txt, .wab, .wps, .x3f, .xls, .xlsb, .xlsk, .xlsm, .xlsx, .zip
 
 It encrypts up to 30,000 bytes of the header of each file, and stores the number of encrypted bytes in the first 4 bytes (appending the overwritten bytes to the end of the file).
 
