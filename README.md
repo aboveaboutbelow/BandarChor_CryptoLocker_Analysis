@@ -1,7 +1,7 @@
 Analysis
 --------
 
-Note: A patched version of the original that works offline has been added to bandarchor.zip.
+Note: A patched version of the original that works offline has been added to bandarchor.zip. To decrypt files encrypted with it use the patched version of unlock.exe (which uses a null key).
 
 The original executable decrypts and unpacks itself. It can detect a sandboxed environment (e.g. VMWare) and terminates itself. It decrypts its payload (an executable packed with UPX 3.08) using VB5 code, taking 10-20 seconds. It then terminates and creates another process. This executable is written in Delphi.
 
