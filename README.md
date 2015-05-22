@@ -1,6 +1,8 @@
 Analysis
 --------
 
+Note: A patched version of the original that works offline has been added to bandarchor.zip.
+
 The original executable decrypts and unpacks itself. It can detect a sandboxed environment (e.g. VMWare) and terminates itself. It decrypts its payload (an executable packed with UPX 3.08) using VB5 code, taking 10-20 seconds. It then terminates and creates another process. This executable is written in Delphi.
 
 Functions of interest are found from about 0x495000 to 0x49E000.
